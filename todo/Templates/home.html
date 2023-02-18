@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<table class="table  table-striped table-dark ">
+    <thead>
+        <tr>
+            <th scape="col">#</th>
+            <th scape="col">Tarea</th>
+            <th scape="col">Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tarea in tareas %}  
+        <tr>
+            <th scape="row"> {{tarea.id}} </th>
+            <td> {{tarea}}</td>
+            <td>
+                <a class="btn btn-danger" href="{% url 'eliminar' tarea.id %}">Eliminar</a></button>
+                <a class="btn btn-primary" href="{% url 'editar' tarea.id %}">Editar</a>
+            </td>
+        {% endfor %}
+    </tbody>
+</table>
+<ul>
+    {% for tarea in tareas %}
+    {% endfor %}
+</ul>
+{% endblock %}    
+
